@@ -11,7 +11,7 @@ function Card() {
     <>
       <h1 className={TextCss.cssmodule}>CSS module</h1>
 
-      <h1 style={{ color: "red" }}>Inline css</h1>
+      <h1 style={{ color: "red", textAlign:"center" }}>Inline css</h1>
 
       <h2 style={JavaScss}>JavaScript css </h2>
 

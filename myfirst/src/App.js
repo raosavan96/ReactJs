@@ -1,11 +1,12 @@
-// import logo from "./logo.svg";
 import "./App.css";
-import Css from "./Component/Css/Css.jsx"
+// import Css from "./Component/Css/Css.jsx";
+import Props from "./Component/Props/Props";
 
 function App() {
   return (
     <>
-      <Css />
+      {/* <Css /> */}
+      <Props />
     </>
   );
 }
