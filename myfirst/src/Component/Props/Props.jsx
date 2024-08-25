@@ -1,34 +1,44 @@
 import React from "react";
 import PropsTry from "./PropsTry";
 import Card from "./Card";
-import CardImage from "../Css/Media/Images/user.jpg";
-import Cardgirl from "../Css/Media/Images/usergirl.jpg";
+import CardI from "../Css/Media/Images/user.jpg";
+import CardII from "../Css/Media/Images/user2.jpg";
+import CardIII from "../Css/Media/Images/user3.jpg";
+import CardIV from "../Css/Media/Images/user4.jpg";
+import CardV from "../Css/Media/Images/user5.jpg";
 
 function Props() {
   let data = [
     {
-      firstName: "Sawan",
+      firstName: "Sawan Kumar",
       lastName: " Yadav",
       prof: "Web Developer",
-      img: CardImage,
+      img: CardI,
     },
     {
       firstName: "Lokesh",
       lastName: " Yadav",
       prof: "Motion Graphic Designer",
-      img: Cardgirl,
+      img: CardII,
     },
     {
       firstName: "Deshraj",
       lastName: " Yadav",
       prof: "Motion Graphic Designer",
-      img: CardImage,
+      img: CardIII,
     },
     {
       firstName: "Rahul",
       lastName: " Jangid",
       prof: "Motion Graphic Designer",
-      img: Cardgirl,
+      img: CardIV,
+    },
+    ,
+    {
+      firstName: "Kamlesh",
+      lastName: " Yadav",
+      prof: "Student",
+      img: CardV,
     },
   ];
 
@@ -36,9 +46,11 @@ function Props() {
     <>
       {/* <PropsTry userData={data} /> */}
 
-      {data.map((value) => (
-        <Card userData={value} />
-      ))}
+      <div style={{ display: "flex" }}>
+        {data.map((value) => (
+          <Card userData={value} />
+        ))}
+      </div>
 
       {data.map((value) => (
         <ul>
