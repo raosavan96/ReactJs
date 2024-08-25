@@ -22,20 +22,34 @@ function UseStateHook() {
   //     }
   //   }
 
-  const datas = { userName: "Lokesh", lastName: "Yadav" };
+  let data = { userName: "Lokesh ", lastName: "Yadav" };
 
-  const [objjValue, setObjj] = useState(datas);
+  const [objValue, setObj] = useState(data);
 
   function objChange() {
-    setObjj({ ...datas, userName: "Rao" });
+    setObj({ ...data, userName: "Sawan " });
   }
 
   return (
     <>
+      <h1>Learn UseState Hook</h1>
+
+      {/* <h2>UserName :- {value} </h2>
+
+      <button onClick={handleValue}>Update</button> */}
+
+      {/* Increment & Decrement */}
+
+      {/* <h2>Counter Application</h2>
+
+      <button onClick={Increment}>Increment</button>
+      <h3>{value}</h3>
+      <button onClick={Decrement}>Decrement</button> */}
+
       <h1>Object value change with UseState</h1>
       <h2>
-        {objjValue.userName}
-        {objjValue.lastName}
+        {objValue.userName}
+        {objValue.lastName}
       </h2>
       <button onClick={objChange}>Object value change</button>
     </>
