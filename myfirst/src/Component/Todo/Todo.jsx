@@ -2,23 +2,13 @@ import { useState } from "react";
 import TodoCss from "./Todo.module.css";
 
 function Todo() {
-  const allTask = [
-    {
-      taskName: "Buy Car",
-      complete: true,
-    },
-    {
-      taskName: "Buy Iphone",
-      complete: true,
-    },
-    {
-      taskName: "Buy Bike",
-      complete: true,
-    },
-  ];
+  const allTask = [];
 
   const [task, setTast] = useState("");
   const [addTast, addTaskFun] = useState(allTask);
+  const [Ctask, setCtask] = useState(0);
+  const [Utask, setUtask] = useState(0);
+  const [totalTask, setTotalTask] = useState(0);
 
   function inputFun(e) {
     setTast(e.target.value);
@@ -30,8 +20,31 @@ function Todo() {
 
   function addTastMain() {
     if (task) {
-      addTaskFun([...allTask, task]);
+      addTaskFun([...addTast, { taskName: task, complete: false }]);
     }
+    setTast("");
+  }
+
+  function handleCheck(id) {
+    const myArray = [...addTast];
+    myArray[id].complete = !myArray[id].complete;
+    addTaskFun(myArray);
+
+    const completeTask = myArray.filter((value, index) => {
+      return value.complete;
+    });
+    setCtask(completeTask.length);
+
+    const unComleteTast = myArray.filter((value, index) => {
+      return !value.complete;
+    });
+    setUtask(unComleteTast.length);
+
+    const totelTasks = myArray.filter((value, index) => {
+      return value;
+    });
+
+    setTotalTask(totelTasks.length);
   }
 
   return (
@@ -62,8 +75,21 @@ function Todo() {
                   <li>
                     <div className="d-flex aligin-items-center justify-content-between">
                       <div className="d-flex">
-                        <input type="checkbox" checked={value.complete} />
-                        <p className="m-0 ms-2">{value.taskName}</p>
+                        <input
+                          type="checkbox"
+                          checked={value.complete}
+                          onClick={() => handleCheck(index)}
+                        />
+                        <p
+                          className="m-0 ms-2"
+                          style={{
+                            textDecoration: value.complete
+                              ? "line-through"
+                              : "",
+                          }}
+                        >
+                          {value.taskName}
+                        </p>
                       </div>
                       <div>
                         <i class="bi bi-pencil-square text-primary me-3"></i>
@@ -76,9 +102,13 @@ function Todo() {
             </div>
           </div>
 
+          <div className={TodoCss.total_task}>
+            <p>totel :- {totalTask}</p>
+          </div>
+
           <div className={TodoCss.footer_content}>
-            <p>Component Task :-</p>
-            <p>-: Remaining Task</p>
+            <p>Component Task :- {Ctask}</p>
+            <p>{Utask} -: Remaining Task</p>
           </div>
         </div>
       </div>
