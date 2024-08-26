@@ -42,7 +42,7 @@ function Form() {
           />
 
           <h5 className="mt-3" style={{ color: "red" }}>
-            {value}
+            {value === "" ? "Error" : value}
           </h5>
           <button className="form-control btn btn-danger" type="submit">
             Submit

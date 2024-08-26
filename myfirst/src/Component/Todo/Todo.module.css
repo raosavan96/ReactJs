@@ -1,0 +1,152 @@
+body {
+  background-color: maroon;
+}
+
+.todo_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.hedding {
+  text-align: center;
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.todo_box {
+  width: 450px;
+  height: 350px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.input_sec {
+  display: flex;
+}
+
+form {
+  height: 25%;
+}
+
+.content_box {
+  height: 63%;
+  overflow: hidden;
+  padding: 15px 0 0 0;
+}
+
+.content_box_items {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.content_box ul {
+  padding: 0;
+  margin: 0 0 12px 0;
+  list-style: none;
+  color: #fff;
+}
+
+.footer_content {
+  height: 12%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_content p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color of the scrollbar handle */
+    width: 1px;
+    border-radius: 10px; /* Rounded corners of the handle */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Background color of the scrollbar track */
+}
+
+/* For Firefox */
