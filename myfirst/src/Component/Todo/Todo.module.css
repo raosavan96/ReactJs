@@ -19,7 +19,8 @@ body {
 }
 
 .todo_box {
-  width: 450px;
+  max-width: 450px;
+  width: 100%;
   height: 350px;
   border: 1px solid #ccc;
   padding: 12px;
@@ -74,6 +75,16 @@ form {
   color: #fff;
   font-size: 14px;
   font-weight: 700;
+}
+
+@media screen and (max-width: 470px) {
+  .todo_box {
+    width: 90%;
+  }
+
+  .btn_style {
+    font-size: 10px;
+  }
 }
 
 /* For Webkit browsers (Chrome, Safari, etc.) */
