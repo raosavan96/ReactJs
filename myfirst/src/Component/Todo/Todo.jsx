@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import TodoCss from "./Todo.module.css";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 function Todo() {
-  const allTask = [];
+  const allTask = JSON.parse(localStorage.getItem("todo")) || [];
 
   const [task, setTast] = useState("");
   const [addTast, addTaskFun] = useState(allTask);
@@ -24,7 +24,12 @@ function Todo() {
       addTaskFun([...addTast, { taskName: task, complete: false }]);
     }
     setTast("");
-    toast("Task Added")
+
+    if (task) {
+      toast.success("Task added");
+    } else {
+      toast.error("Task not filed");
+    }
   }
 
   function handleCheck(id) {
@@ -34,29 +39,29 @@ function Todo() {
   }
 
   function handleDelete(id) {
-    const arrayDelet = [...addTast]
+    const arrayDelet = [...addTast];
     const deleteItem = arrayDelet.filter((value, index) => {
-      return id !== index
-    })
+      return id !== index;
+    });
 
-    addTaskFun(deleteItem)
-
+    addTaskFun(deleteItem);
   }
 
   function handeleEdit(id) {
     // (1)
 
-    const arrayUpdate = [...addTast]
-    const updateValue = arrayUpdate[id]
-    let promptValue = prompt(`Edit value ${updateValue.taskName}`, updateValue.taskName)
+    const arrayUpdate = [...addTast];
+    const updateValue = arrayUpdate[id];
+    let promptValue = prompt(
+      `Edit value ${updateValue.taskName}`,
+      updateValue.taskName
+    );
 
     if (promptValue) {
-      let newaValue = { taskName: promptValue, complete: false }
-      arrayUpdate.splice(id, 1, newaValue)
-      addTaskFun(arrayUpdate)
+      let newaValue = { taskName: promptValue, complete: false };
+      arrayUpdate.splice(id, 1, newaValue);
+      addTaskFun(arrayUpdate);
     }
-
-
   }
 
   useEffect(() => {
@@ -76,10 +81,13 @@ function Todo() {
     });
 
     setTotalTask(totelTasks.length);
-  }, [addTast])
+
+    localStorage.setItem("todo", JSON.stringify(myArray));
+  }, [addTast]);
 
   return (
     <>
+      <Toaster />
       <div className={TodoCss.todo_main}>
         <div className={TodoCss.todo_box}>
           <form onSubmit={handleForm}>
@@ -102,11 +110,12 @@ function Todo() {
           <div className={TodoCss.content_box}>
             <div className={TodoCss.content_box_items}>
               {addTast.map((value, index) => (
-                <ul>
+                <ul key={index}>
                   <li>
                     <div className="d-flex aligin-items-center justify-content-between">
                       <div className="d-flex">
                         <input
+                          style={{ cursor: "pointer" }}
                           type="checkbox"
                           checked={value.complete}
                           onClick={() => handleCheck(index)}
@@ -123,8 +132,16 @@ function Todo() {
                         </p>
                       </div>
                       <div>
-                        <i class="bi bi-pencil-square text-primary me-3" onClick={() => handeleEdit(index)}></i>
-                        <i class="bi bi-trash  text-warning" onClick={() => handleDelete(index)}></i>
+                        <i
+                          style={{ cursor: "pointer" }}
+                          class="bi bi-pencil-square text-primary me-3 "
+                          onClick={() => handeleEdit(index)}
+                        ></i>
+                        <i
+                          style={{ cursor: "pointer" }}
+                          class="bi bi-trash  text-warning"
+                          onClick={() => handleDelete(index)}
+                        ></i>
                       </div>
                     </div>
                   </li>
