@@ -4,7 +4,8 @@ import "./App.css";
 // import Css from "./Component/Css/Css.jsx";
 // import Props from "./Component/Props/Props";
 // import Form from "./Component/Form/Form";
-import Todo from "./Component/Todo/Todo";
+// import Todo from "./Component/Todo/Todo";
+import Data from "./Component/Data/Data";
 
 function App() {
   return (
@@ -14,10 +15,8 @@ function App() {
       {/* <UseStateHook /> */}
       {/* <UseEffect /> */}
       {/* <Form /> */}
-
-
-      <Todo />
-
+      {/* <Todo /> */}
+      <Data />
     </>
   );
 }
