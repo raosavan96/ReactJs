@@ -27,7 +27,7 @@ function Data() {
             setValue(value - 1);
           }}
         >
-           {`<`}
+          {`<`}
         </button>
         <Card datas={data} />
         <button

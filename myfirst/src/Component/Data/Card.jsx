@@ -1,7 +1,7 @@
 import React from "react";
 
 function Card(props) {
-  let { title, images, description, price, category,rating } = props.datas;
+  let { title, images, description, price, category, rating } = props.datas;
   return (
     <>
       <div className="card" style={{ width: "18rem" }}>
@@ -11,13 +11,13 @@ function Card(props) {
           <p className="card-text">{description}</p>
         </div>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">Price :- ${price}</li> 
+          <li className="list-group-item">Price :- ${price}</li>
           <li className="list-group-item">Category :- {category}</li>
           <li className="list-group-item">Rating :- {rating}</li>
         </ul>
         <div className="card-body">
           <a href="/" className="card-link btn btn-info">
-           Buy Now
+            Buy Now
           </a>
           <a href="/" className="card-link btn btn-danger">
             Add Card
