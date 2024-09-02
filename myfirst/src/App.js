@@ -1,4 +1,5 @@
 import "./App.css";
+import RouterP from "./Component/Prectice/Router/RouterP";
 
 // import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 // import UseStateHook from "./Component/Hooks/UseState/UseState";
@@ -7,7 +8,7 @@ import "./App.css";
 // import Form from "./Component/Form/Form";
 // import Todo from "./Component/Todo/Todo";
 // import Data from "./Component/Data/Data";
-import Router from "./Component/Router/Router";
+// import Router from "./Component/Router/Router";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Form /> */}
       {/* <Todo /> */}
       {/* <Data /> */}
-      <Router />
+      {/* <Router /> */}
+      <RouterP />
     </>
   );
 }
