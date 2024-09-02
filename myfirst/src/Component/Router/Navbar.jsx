@@ -6,9 +6,9 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             Navbar
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -37,6 +37,20 @@ function Navbar() {
                   Todo
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/contact">
+                  Contact
+                </Link>
+              </li>
+
+                <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/single">
+                  Single
+                </Link>
+              </li>  
+
+              
             </ul>
             <form className="d-flex">
               <input
