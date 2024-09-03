@@ -5,23 +5,24 @@ function Mui() {
   const [Datas, SetDatas] = useState();
 
   useEffect(() => {
-    fetch("https://dummyjson.com/Carts")
+    fetch("https://dummyjson.com/Products")
       .then((reu) => {
         return reu.json();
       })
       .then((data) => {
-        // console.log(data.carts);
-        SetDatas(data.carts);
+        console.log(data);
+        let a = SetDatas(data.Products[0].title);
+        console.log(a);
       });
-  }, []);
+  }, [Datas]);
   return (
     <>
       <SearchAppBar />
 
-      {Datas.map((value, index) => (
-        <MediaCard>{value}</MediaCard>
-      ))}
-      {/* <MediaCard /> */}
+      {/* {Datas.map((value) => (
+        <MediaCard allData={value} />
+      ))} */}
+      <MediaCard allData={Datas} />
     </>
   );
 }

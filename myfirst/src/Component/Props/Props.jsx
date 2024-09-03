@@ -33,7 +33,6 @@ function Props() {
       prof: "Motion Graphic Designer",
       img: CardIV,
     },
-    ,
     {
       firstName: "Kamlesh",
       lastName: " Yadav",
