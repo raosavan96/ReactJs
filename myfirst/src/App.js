@@ -1,5 +1,7 @@
 import "./App.css";
-import RouterP from "./Component/Prectice/Router/RouterP";
+import Mui from "./Component/Mui/Mui";
+
+// import RouterP from "./Component/Prectice/Router/RouterP";
 
 // import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 // import UseStateHook from "./Component/Hooks/UseState/UseState";
@@ -21,7 +23,8 @@ function App() {
       {/* <Todo /> */}
       {/* <Data /> */}
       {/* <Router /> */}
-      <RouterP />
+      {/* <RouterP /> */}
+      <Mui />
     </>
   );
 }

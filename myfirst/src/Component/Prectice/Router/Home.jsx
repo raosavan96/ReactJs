@@ -22,7 +22,7 @@ function Home() {
             <div className="card-body">
               <h5 className="card-title">{value.title}</h5>
               <p className="card-text">{value.description}</p>
-              <Link to={`/single/${value.id}`} className="btn btn-primary">
+              <Link to={`/single/${value.title}`} className="btn btn-primary">
                 Go somewhere
               </Link>
             </div>
