@@ -1,5 +1,6 @@
 import "./App.css";
-import Mui from "./Component/Mui/Mui";
+import Learn from "./Component/ChaiWithCode/Learn";
+// import Mui from "./Component/Mui/Mui";
 
 // import RouterP from "./Component/Prectice/Router/RouterP";
 
@@ -24,7 +25,8 @@ function App() {
       {/* <Data /> */}
       {/* <Router /> */}
       {/* <RouterP /> */}
-      <Mui />
+      {/* <Mui /> */}
+      <Learn />
     </>
   );
 }
