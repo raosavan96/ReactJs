@@ -1,5 +1,6 @@
 import "./App.css";
 import Learn from "./Component/ChaiWithCode/Learn";
+// import Api from "./Component/Api/Api";
 // import Mui from "./Component/Mui/Mui";
 
 // import RouterP from "./Component/Prectice/Router/RouterP";
@@ -27,6 +28,7 @@ function App() {
       {/* <RouterP /> */}
       {/* <Mui /> */}
       <Learn />
+      {/* <Api /> */}
     </>
   );
 }

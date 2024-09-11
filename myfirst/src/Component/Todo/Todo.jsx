@@ -123,9 +123,7 @@ function Todo() {
                         <p
                           className="m-0 ms-2"
                           style={{
-                            textDecoration: value.complete
-                              ? "line-through"
-                              : "",
+                            textDecoration: value.complete ? "line-through" : ""
                           }}
                         >
                           {value.taskName}
