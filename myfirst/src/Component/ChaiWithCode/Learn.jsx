@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import PassGGrty from "./Projects/PassGGrty";
+// import PassGtry from "./Projects/PassGtry";
 // import CardOne from "./CardOne";
-import PassGen from "./Projects/PassGen";
+// import PassGen from "./Projects/PassGen";
 
 function Learn() {
   // const [colorr, setColor] = useState("red")
@@ -19,7 +21,9 @@ function Learn() {
             <button onClick={()=> setColor("blue")} className="px-3 py-2 text-white rounded-xl" style={{backgroundColor:"blue"}}>Blue</button>
         </div>
       </div> */}
-      <PassGen />
+      {/* <PassGen /> */}
+      {/* <PassGtry/> */}
+      <PassGGrty/>
     </>
   );
 }

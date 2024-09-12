@@ -23,12 +23,11 @@ function PassGen() {
     setPassword(pass);
   }, [length, numAllowed, charAllowed, setPassword]);
 
-
   const copyPassword = useCallback(() => {
-    passwordRef.current?.select()
-    passwordRef.current?.setSelectionRange(0,100);
-    window.navigator.clipboard.writeText(password)
-  },[password])
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0, 100);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   useEffect(() => {
     passwordGen();
@@ -48,7 +47,10 @@ function PassGen() {
             readOnly
             ref={passwordRef}
           />
-          <button onClick={copyPassword} className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+          <button
+            onClick={copyPassword}
+            className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+          >
             Copy
           </button>
         </div>
