@@ -1,0 +1,364 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Artifika", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.form-check-input {
+  margin-top: 0;
+}
+
+button {
+  border: none;
+}
+
+img,
+video {
+  width: 100%;
+  height: 100%;
+}
+
+/* / Common Colours Start / */
+.light_theme {
+  --button_bgcolor: #d1d5db;
+  --button_color: #000;
+  --text_color: #615f5f;
+  --border-colr: #ccc;
+  --list_color: #5c5c5c;
+  --white_color: #fff;
+  --hedding_color: #fff;
+  --main_bg: linear-gradient(
+    125deg,
+    rgba(131, 21, 216, 1) 32%,
+    rgba(12, 174, 249, 1) 94%
+  );
+}
+
+.dark_theme {
+  --button_bgcolor: #595959;
+  --button_color: #fff;
+  --text_color: #dddddd;
+  --border-colr: #dddddd;
+  --list_color: #f4f4f4;
+  --white_color: #1f2937;
+  --hedding_color: #fff;
+  --main_bg: linear-gradient(125deg, #000 22%, #000 78%);
+}
+
+/* / 555455 090909 / */
+
+/* / Common Colours End / */
+
+/* / Todo Style Start / */
+
+.main_todo {
+  background: var(--main_bg);
+  width: 100%;
+  height: 100vh;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.only_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_box {
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+  /* / border: 1px solid #ccc; / */
+}
+
+.app_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app_name h1 {
+  color: var(--hedding_color);
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.app_name button {
+  background-color: var(--button_bgcolor);
+
+  width: 30px;
+  height: 30px;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.app_name button i {
+  color: var(--button_color);
+}
+
+/* / Form Sec Start / */
+
+.box_sdw {
+  box-shadow: 3px 3px 14px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  background-color: var(--white_color);
+
+  border-radius: 8px;
+}
+
+.todo_form {
+  height: 60px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_form form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.todo_form form button {
+  color: var(--text_color);
+  border: none;
+  width: 15%;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: var(--white_color);
+}
+
+.todo_form form input {
+  border: none;
+  font-size: 14px;
+  color: var(--text_color);
+  width: 78%;
+  background-color: var(--white_color);
+}
+
+.todo_form form input:focus {
+  box-shadow: none !important;
+}
+
+.input_plus {
+  border: 1px solid var(--text_color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_plus i {
+  font-size: 10px;
+  color: var(--text_color);
+}
+
+/* / Form Sec End / */
+
+/* / Content Sec Start / */
+
+.todo_content {
+  height: 350px;
+  overflow: hidden;
+}
+
+.todo_content_box {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.content_acc_sec {
+  border-bottom: 1px solid var(--border-colr);
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alldelete_task {
+  font-size: 20px !important;
+}
+
+.content_acc_sec p {
+  color: var(--text_color);
+  font-size: 12px;
+}
+
+.content_acc_sec p span {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 1px;
+}
+
+.content_acc_sec button {
+  color: var(--text_color);
+}
+
+/* / Todo list items start / */
+
+.todo_list {
+  padding: 0px 15px;
+}
+
+.todo_list ul {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-colr);
+}
+
+.todo_list ul li {
+  font-size: 16px;
+  padding: 0 11px;
+  color: var(--list_color);
+}
+
+.todo_list input {
+  width: 17px;
+  height: 17px;
+}
+
+.todo_list button {
+  color: var(--text_color);
+  font-size: 18px;
+  background-color: transparent;
+}
+
+/* Media Screen size start*/
+
+@media screen and (max-width: 550px) {
+  .app_name h1 {
+    font-size: 29px;
+  }
+
+  .app_name button {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  .todo_box {
+    width: 90%;
+  }
+
+  .todo_form form button {
+    font-size: 13px;
+  }
+  .todo_form form input {
+    font-size: 12px;
+  }
+
+  .content_acc_sec {
+    padding: 5px 8px;
+  }
+
+  .content_acc_sec button {
+    font-size: 14px !important;
+  }
+
+  .content_acc_sec p {
+    font-size: 10px;
+  }
+
+  .content_acc_sec p span {
+    font-size: 11px !important;
+  }
+
+  .todo_list {
+    padding: 0;
+  }
+
+  .input_plus {
+    width: 15px;
+    height: 15px;
+  }
+
+  .input_plus i {
+    font-size: 8px;
+  }
+
+  .todo_form {
+    height: 50px;
+  }
+
+  .todo_list input {
+    width: 12px;
+    height: 12px;
+  }
+
+  .todo_list p {
+    font-size: 12px;
+  }
+
+  .todo_list button {
+    font-size: 13px;
+  }
+}
+
+/* / Media Screen size end / */
+
+/* / Todo list items end / */
+/* / Content Sec End / */
+
+/* / Todo Style End / */
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8315d8;
+  width: 2px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 0;
+
+  box-shadow: 0 0 0 0.25rem transparent !important;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem transparent !important;
+}
+
+.form-control:focus {
+  color: var(--text_color) !important;
+  background-color: transparent !important;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem transparent !important;
+}

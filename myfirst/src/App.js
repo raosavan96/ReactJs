@@ -1,5 +1,8 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Learn from "./Component/ChaiWithCode/Learn";
+import Appbar from "./Component/Navbar/Appbar";
+// import Context from "./Component/Hooks/Context/Context";
+// import Learn from "./Component/ChaiWithCode/Learn";
 // import Api from "./Component/Api/Api";
 // import Mui from "./Component/Mui/Mui";
 
@@ -10,13 +13,35 @@ import Learn from "./Component/ChaiWithCode/Learn";
 // import Css from "./Component/Css/Css.jsx";
 // import Props from "./Component/Props/Props";
 // import Form from "./Component/Form/Form";
-// import Todo from "./Component/Todo/Todo";
+import Todo from "./Component/Projects/Todo/Todo";
+import Ltodo from "./Component/Todo/Todo";
+import Home from "./Component/Home";
+import PassGGrty from "./Component/ChaiWithCode/Projects/PassGGrty";
+import UseRef from "./Component/Hooks/UseRef/UseRef";
 // import Data from "./Component/Data/Data";
-// import Router from "./Component/Router/Router";
+import UseState from "./Component/Hooks/UseState/UseState";
+import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
+import UseReducer from "./Component/Hooks/UseReducer/UseReducer";
+// import Router from "./Component/Navbar/Navbar";
 
 function App() {
   return (
     <>
+      <BrowserRouter>
+        <Appbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/todo" element={<Todo />} />
+          <Route path="learntodo" element={<Ltodo />} />
+          <Route path="/password" element={<PassGGrty />} />
+          <Route path="/useref" element={<UseRef />} />
+          <Route path="/usestate" element={<UseState />} />
+          <Route path="/useeffect" element={<UseEffect />} />
+          <Route path="/usereducer" element={<UseReducer />} />
+        </Routes>
+      </BrowserRouter>
+
       {/* <Css /> */}
       {/* <Props /> */}
       {/* <UseStateHook /> */}
@@ -27,8 +52,9 @@ function App() {
       {/* <Router /> */}
       {/* <RouterP /> */}
       {/* <Mui /> */}
-      <Learn />
+      {/* <Learn /> */}
       {/* <Api /> */}
+      {/* <Context /> */}
     </>
   );
 }
