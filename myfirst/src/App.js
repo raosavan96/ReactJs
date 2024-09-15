@@ -22,6 +22,7 @@ import UseRef from "./Component/Hooks/UseRef/UseRef";
 import UseState from "./Component/Hooks/UseState/UseState";
 import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 import UseReducer from "./Component/Hooks/UseReducer/UseReducer";
+import Sign from "./Component/Projects/Signin/Sign";
 // import Router from "./Component/Navbar/Navbar";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/usestate" element={<UseState />} />
           <Route path="/useeffect" element={<UseEffect />} />
           <Route path="/usereducer" element={<UseReducer />} />
+          <Route path="/signin" element={<Sign/>} />
         </Routes>
       </BrowserRouter>
 
