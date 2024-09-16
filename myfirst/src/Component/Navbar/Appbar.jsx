@@ -94,12 +94,25 @@ function Appbar() {
                       Password Genrator
                     </Link>
                   </li>
+                  <li>
+                    <Link className="dropdown-item" to="/passgen">
+                      Password Genrator Prectice
+                    </Link>
+                  </li>
 
                   <li>
                     <Link className="dropdown-item" to="/signin">
                       Sign in
                     </Link>
                   </li>
+
+                  {/* <li>
+                    <Link className="dropdown-item" to="/currencyinfo">
+                    Currency Info
+                    </Link>
+                  </li> */}
+                  
+                  
                 </ul>
               </li>
             </ul>
