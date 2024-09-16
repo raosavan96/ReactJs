@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Sign() {
+  const [emailVar, setEmail] = useState("");
+  const [passVar, setPass] = useState("");
+
+  const userData = [
+    {
+      userName: "sawan kumar yadav",
+      password: "969677"
+    },
+    {
+      userName: "lokesh yadav",
+      password: "635028"
+    }
+  ];
+
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  function handlePass(e) {
+    setPass(e.target.value);
+  }
+
+  function handleFormData() {
+    for (let i = 0; i <= userData.length; i++) {
+      if (userData[i].userName === emailVar) {
+        console.log("log in");
+      } else {
+        console.log("log in error");
+      }
+    }
+  }
+
   return (
     <>
       <div className="max-w-lg rounded-md bg-lime-600 text-white mx-auto py-3 px-3 mt-4">
@@ -14,10 +46,12 @@ function Sign() {
               Email address
             </label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              value={emailVar}
+              onChange={handleEmail}
             />
             <div id="emailHelp" className="form-text">
               We'll never share your email with anyone else.
@@ -31,6 +65,8 @@ function Sign() {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
+              value={passVar}
+              onChange={handlePass}
             />
           </div>
           <div className="mb-3 form-check">
@@ -43,7 +79,11 @@ function Sign() {
               Check me out
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            onClick={handleFormData}
+            className="btn btn-primary"
+          >
             Submit
           </button>
         </form>
