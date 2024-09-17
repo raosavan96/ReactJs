@@ -24,6 +24,7 @@ import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 import UseReducer from "./Component/Hooks/UseReducer/UseReducer";
 import Sign from "./Component/Projects/Signin/Sign";
 import PassGenPre from "./Component/ChaiWithCode/Projects/PassGenPre";
+import Weather from "./Component/Projects/Weather/Weather";
 // import Router from "./Component/Navbar/Navbar";
 // import CurrencyInfo from "./Component/Projects/CurrencyInfo/CurrencyInfo";
 
@@ -44,7 +45,7 @@ function App() {
           <Route path="/usereducer" element={<UseReducer />} />
           <Route path="/signin" element={<Sign />} />
           <Route path="/passgen" element={<PassGenPre />} />
-          {/* <Route path="/currencyinfo" element={<CurrencyInfo />} /> */}
+          <Route path="/weather" element={<Weather />} />
         </Routes>
       </BrowserRouter>
 

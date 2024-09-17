@@ -106,13 +106,11 @@ function Appbar() {
                     </Link>
                   </li>
 
-                  {/* <li>
-                    <Link className="dropdown-item" to="/currencyinfo">
-                    Currency Info
+                  <li>
+                    <Link className="dropdown-item" to="/weather">
+                      Weather
                     </Link>
-                  </li> */}
-                  
-                  
+                  </li>
                 </ul>
               </li>
             </ul>

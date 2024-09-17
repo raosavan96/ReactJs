@@ -1,0 +1,46 @@
+/* Container to center the toggle button */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Hide the default checkbox */
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  /* The toggle button's background */
+  .toggle-label {
+    width: 70px;
+    height: 35px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+  
+  /* The circle inside the toggle */
+  .toggle-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.4s ease;
+  }
+  
+  /* When the checkbox is checked (toggle is on) */
+  .toggle-checkbox:checked + .toggle-label {
+    background-color: #4caf50;
+  }
+  
+  /* Move the circle to the right when the toggle is on */
+  .toggle-checkbox:checked + .toggle-label .toggle-circle {
+    transform: translateX(35px);
+  }
+  
