@@ -5,7 +5,7 @@ import Details from "./Details";
 import { useWeather } from "./WeatherContext"; // Use the custom hook
 
 function ContentSec() {
-  const [weatherData, setWeatherData] = useState("Jaipur");
+  const [weatherData, setWeatherData] = useState();
   const { weather, setWeather } = useWeather(); // Access context using the custom hook
 
   const detailArray = {
@@ -19,15 +19,19 @@ function ContentSec() {
     icon2: "fa-solid fa-temperature-low",
     icon3: "fa-solid fa-eye",
     icon4: "fa-solid fa-location-crosshairs",
-    icon5: "fa-solid fa-cloud-meatball"
+    icon5: "fa-solid fa-cloud-meatball",
+    speed: "m/sec",
+    temp: "c",
+    km: "km"
   };
-
 
   const apiKey = "340791651da63f0d2465805bede445b3";
 
-  const handleCities = () => {
+  function handleCities() {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${`${weatherData}` || "jaipur"}&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${
+        `${weatherData}` || "jaipur"
+      }&appid=${apiKey}&units=metric`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -37,7 +41,7 @@ function ContentSec() {
       .catch((error) => {
         console.error(error);
       });
-  };
+  }
 
   return (
     <div className={`${WeatherCss.main_content_box} h-full`}>
@@ -62,22 +66,22 @@ function ContentSec() {
         <div className="row">
           <div className={`${WeatherCss.city_temp} col-6`}>
             <h1 className="mt-4 text-4xl font-bold">
-              {weather.name || "City"}, {weather.sys.country || "con"}
+              {weather.name || "City"}, {weather.sys && weather.sys.country}
             </h1>
             <p className="text-xs mt-3">
-              Chance of rain: {weather.rain ? `${weather.rain["1h"]}%` : "0%"}
+              {weather.weather && weather.weather[0].description}
             </p>
             <div>
               <h1 className="text-6xl font-bold mt-5">
-                {weather.main?.temp}
-                &deg;
+                {weather.main?.temp || "0"}
+                &deg;c
               </h1>
             </div>
           </div>
           <div
             className={`${WeatherCss.moon_sun} col-6 flex items-center justify-center`}
           >
-            <img src={MoonImg} alt="weather-icon" />
+            <img src={`https://openweathermap.org/img/wn/${weather.weather && weather.weather[0].icon || `50d`}@2x.png`} alt="weather-icon" />
           </div>
         </div>
       </div>

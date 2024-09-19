@@ -65,6 +65,16 @@ function Appbar() {
                       UseReducer
                     </Link>
                   </li>
+                  <li>
+                    <Link className="dropdown-item" to="/usecontext">
+                      UseContext
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/usecontextapi">
+                      UseContext Api
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li className="nav-item dropdown">

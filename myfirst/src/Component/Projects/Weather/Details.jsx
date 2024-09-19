@@ -35,9 +35,13 @@ function Details({
               {wName6?.wName6}
             </p>
             <h5>
-              {weather?.wind.speed} {weather2?.main.temp} {weather3?.visibility}
-              {weather4?.coord.lat}
-              {weather5?.coord.lon} {weather6?.main.humidity}
+              {weather?.wind && weather?.wind.speed}{" "}
+              {weather2?.main && weather2?.main.temp}{" "}
+              {weather3 && weather3?.visibility}
+              {weather4?.coord && weather4?.coord.lat}
+              {weather5?.coord && weather5?.coord.lon}{" "}
+              {weather6?.main && weather6?.main.humidity}
+              {wName1?.speed}{wName2?.temp}{wName3?.km}
             </h5>
           </div>
         </div>

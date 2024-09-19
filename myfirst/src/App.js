@@ -22,6 +22,8 @@ import UseRef from "./Component/Hooks/UseRef/UseRef";
 import UseState from "./Component/Hooks/UseState/UseState";
 import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 import UseReducer from "./Component/Hooks/UseReducer/UseReducer";
+import UseContext from "./Component/Hooks/useContext/UseContext";
+import UseContextApi from "./Component/Hooks/useContextApi/UseContextApi"
 import Sign from "./Component/Projects/Signin/Sign";
 import PassGenPre from "./Component/ChaiWithCode/Projects/PassGenPre";
 import Weather from "./Component/Projects/Weather/Weather";
@@ -43,6 +45,8 @@ function App() {
           <Route path="/usestate" element={<UseState />} />
           <Route path="/useeffect" element={<UseEffect />} />
           <Route path="/usereducer" element={<UseReducer />} />
+          <Route path="/usecontext" element={<UseContext />} />
+          <Route path="/usecontextapi" element={<UseContextApi />} />
           <Route path="/signin" element={<Sign />} />
           <Route path="/passgen" element={<PassGenPre />} />
           <Route path="/weather" element={<Weather />} />
