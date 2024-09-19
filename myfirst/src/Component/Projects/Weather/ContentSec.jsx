@@ -29,9 +29,7 @@ function ContentSec() {
 
   function handleCities() {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${
-        `${weatherData}` || "jaipur"
-      }&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${`${weatherData}`}&appid=${apiKey}&units=metric`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -81,7 +79,12 @@ function ContentSec() {
           <div
             className={`${WeatherCss.moon_sun} col-6 flex items-center justify-center`}
           >
-            <img src={`https://openweathermap.org/img/wn/${weather.weather && weather.weather[0].icon || `50d`}@2x.png`} alt="weather-icon" />
+            <img
+              src={`https://openweathermap.org/img/wn/${
+                (weather.weather && weather.weather[0].icon) || `50d`
+              }@2x.png`}
+              alt="weather-icon"
+            />
           </div>
         </div>
       </div>
