@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherCss from "./Weather.module.css";
+import "./Weather.css";
 
 function Details({
   weather,
@@ -16,17 +16,17 @@ function Details({
   wName6
 }) {
   return (
-    <div className={`col-4 ${WeatherCss.someClass}`}>
+    <div className={`col-4 someClass`}>
       <div className="flex">
         <div className="flex mt-3">
-          <div className={`${WeatherCss.mini_details} me-2`}>
+          <div className={`mini_details  me-2`}>
             <p>
               <i
                 className={`${wName1?.icon1} ${wName2?.icon2} ${wName3?.icon3} ${wName4?.icon4} ${wName5?.icon4} ${wName6?.icon5}`}
               ></i>
             </p>
           </div>
-          <div className={WeatherCss.mini_details}>
+          <div className={`mini_details`}>
             <p>
               {wName1?.wName1}
               {wName2?.wName2}
@@ -35,13 +35,15 @@ function Details({
               {wName6?.wName6}
             </p>
             <h5>
-              {weather?.wind && weather?.wind.speed}{" "}
-              {weather2?.main && weather2?.main.temp}{" "}
+              {weather?.wind && weather?.wind.speed}
+              {weather2?.main && weather2?.main.temp}
               {weather3 && weather3?.visibility}
               {weather4?.coord && weather4?.coord.lat}
-              {weather5?.coord && weather5?.coord.lon}{" "}
+              {weather5?.coord && weather5?.coord.lon}
               {weather6?.main && weather6?.main.humidity}
-              {wName1?.speed}{wName2?.temp}{wName3?.km}
+              {wName1?.speed}
+              {wName2?.temp}
+              {wName3?.km}
             </h5>
           </div>
         </div>

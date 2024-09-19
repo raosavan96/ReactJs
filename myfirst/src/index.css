@@ -27,11 +27,12 @@ code {
 .toggle-label {
   width: 30px;
   height: 15px;
-  background-color: var(--mainbg);
+  background-color: var(--btnbg);
   margin-top: 6px;
   border-radius: 50px;
   position: relative;
   cursor: pointer;
+  box-shadow: var(--boxshd);
   transition: background-color 0.4s ease;
 }
 
@@ -39,7 +40,7 @@ code {
 .toggle-circle {
   width: 13px;
   height: 13px;
-  background-color: var(--contentbg);
+  background-color: var(--mbtn);
   border-radius: 50%;
   position: absolute;
   top: 0.5px;
@@ -69,7 +70,7 @@ code {
   .toggle-label {
     width: 30px;
     height: 15px;
-  
+
     margin-top: 6px;
     border-radius: 50px;
     position: relative;
@@ -81,7 +82,7 @@ code {
   .toggle-circle {
     width: 13px;
     height: 13px;
-   
+
     border-radius: 50%;
     position: absolute;
     top: 1.5px;
@@ -91,7 +92,6 @@ code {
 
   /* When the checkbox is checked (toggle is on) */
   .toggle-checkbox:checked + .toggle-label {
-   
   }
 
   /* Move the circle to the right when the toggle is on */

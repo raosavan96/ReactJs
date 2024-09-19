@@ -6,12 +6,25 @@
 
 /* css variable start */
 
-:root {
+.light_theme {
+  --backbg: #fafafa;
+  --mainbg: #fff;
+  --contentbg: #fff;
+  --colorWhite: #737475;
+  --text-color: #737475;
+  --boxshd: 0px 8px 24px 0px rgba(140, 149, 159, 0.2);
+  --btnbg: #202c3c;
+  --mbtn: #ffffff;
+}
+
+.dark_theme {
   --backbg: #0b131e;
   --mainbg: #0b131e;
   --contentbg: #202c3c;
   --colorWhite: #fff;
   --text-color: #b3b5b7;
+  --btnbg: #0b131e;
+  --mbtn: #202c3c;
 }
 
 /* css variable end */
@@ -51,8 +64,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  background-color: var(--contentbg);
+  background-color: var(--backbg);
 }
 
 .weather_box {
@@ -61,6 +73,7 @@ img {
   width: 100%;
   overflow: hidden;
   height: 600px;
+  box-shadow: var(--boxshd);
   padding: 40px 30px 0px;
 }
 
@@ -74,6 +87,7 @@ img {
   justify-content: start;
   flex-direction: column;
   align-items: center;
+  box-shadow: var(--boxshd);
 }
 
 .umbrela {
@@ -91,6 +105,11 @@ img {
 .input_sec {
   background-color: var(--contentbg);
   border-radius: 15px;
+  box-shadow: var(--boxshd);
+}
+
+.input_sec input {
+  color: var(--text-color);
 }
 
 .city_temp {
@@ -105,6 +124,10 @@ img {
   color: var(--text-color);
 }
 
+.temp_hed {
+  color: var(--text-color);
+}
+
 .moon_sun img {
   width: 100%;
   height: 100%;
@@ -114,6 +137,7 @@ img {
   background-color: var(--contentbg);
   border-radius: 15px;
   height: 100%;
+  box-shadow: var(--boxshd);
 }
 
 .details_hed {
