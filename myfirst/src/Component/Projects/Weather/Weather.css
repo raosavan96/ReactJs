@@ -6,7 +6,7 @@
 
 /* css variable start */
 
-.light_theme {
+.light_mode {
   --backbg: #fafafa;
   --mainbg: #fff;
   --contentbg: #fff;
@@ -17,8 +17,8 @@
   --mbtn: #ffffff;
 }
 
-.dark_theme {
-  --backbg: #0b131e;
+.dark_mode {
+  --backbg: #202c3c;
   --mainbg: #0b131e;
   --contentbg: #202c3c;
   --colorWhite: #fff;
@@ -125,12 +125,12 @@ img {
 }
 
 .temp_hed {
-  color: var(--text-color);
+  color: var(--colorWhite);
 }
 
 .moon_sun img {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
 }
 
 .weather_details_sec {

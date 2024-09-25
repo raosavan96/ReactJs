@@ -125,7 +125,8 @@ function Todo() {
     localStorage.setItem("todo", JSON.stringify(addTask));
     localStorage.setItem("theme", JSON.stringify(Theme));
 
-    document.body.className = Theme;
+    let b = (document.body.className = Theme);
+    console.log(b);
   }, [addTask, Theme]);
 
   return (

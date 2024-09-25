@@ -33,6 +33,12 @@ function Appbar() {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link className="nav-link" to="/bgcolor">
+                  BackgroundColor
+                </Link>
+              </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -73,6 +79,16 @@ function Appbar() {
                   <li>
                     <Link className="dropdown-item" to="/usecontextapi">
                       UseContext Api
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/usememo">
+                      Usememo
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/usecallback">
+                      Usecallback
                     </Link>
                   </li>
                 </ul>
@@ -118,7 +134,7 @@ function Appbar() {
 
                   <li>
                     <Link className="dropdown-item" to="/weather">
-                      Weather
+                      Weather Info
                     </Link>
                   </li>
                 </ul>

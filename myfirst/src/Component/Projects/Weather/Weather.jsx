@@ -9,7 +9,7 @@ function Weather() {
     <WeatherProvider>
       <div className={`weather_container overflow-hidden`}>
         <div className={`weather_box`}>
-          <div className={`flex justify-between h-full main_box}`}>
+          <div className={`flex justify-between h-full main_box`}>
             <AsideSec />
             <ContentSec />
           </div>

@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import "./Weather.css";
-// import MoonImg from "./images/sun.png";
+import SunImg from "./images/sun.png";
+import BroCimg from "./images/brokenc.png";
+import DayCimg from "./images/dayfewclouds.png";
+import Nicimg from "./images/nightfewclouds.png";
+import DayRain from "./images/day-rain.png";
+import NiRain from "./images/nightrain.png";
+import MistImg from "./images/mist.png";
+import MoonImg from "./images/moon.png";
+import ScCld from "./images/scatteredcl.png";
+import ShowRain from "./images/showerran.png";
+import SnowImg from "./images/snow.png";
+import ThonderS from "./images/thunderstorm.png";
 import Details from "./Details";
 import { useWeather } from "./WeatherContext"; // Use the custom hook
 
 function ContentSec() {
-  const [weatherData, setWeatherData] = useState();
+  const [weatherData, setWeatherData] = useState("jaipur");
   const { weather, setWeather } = useWeather(); // Access context using the custom hook
 
   const detailArray = {
@@ -28,35 +39,83 @@ function ContentSec() {
   const apiKey = "340791651da63f0d2465805bede445b3";
 
   function handleCities() {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${`${weatherData}`}&appid=${apiKey}&units=metric`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setWeather(data);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (weatherData) {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${`${weatherData}`}&appid=${apiKey}&units=metric`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setWeather(data);
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }
+
+  let weatherImg;
+  if (weather.weather && weather.weather[0].icon == "01d") {
+    weatherImg = SunImg;
+  } else if (weather.weather && weather.weather[0].icon == "01n") {
+    weatherImg = MoonImg;
+  } else if (weather.weather && weather.weather[0].icon == "02d") {
+    weatherImg = DayCimg;
+  } else if (weather.weather && weather.weather[0].icon == "02n") {
+    weatherImg = Nicimg;
+  } else if (weather.weather && weather.weather[0].icon == "03d") {
+    weatherImg = ScCld;
+  } else if (weather.weather && weather.weather[0].icon == "03n") {
+    weatherImg = ScCld;
+  } else if (weather.weather && weather.weather[0].icon == "04d") {
+    weatherImg = BroCimg;
+  } else if (weather.weather && weather.weather[0].icon == "04n") {
+    weatherImg = BroCimg;
+  } else if (weather.weather && weather.weather[0].icon == "09d") {
+    weatherImg = ShowRain;
+  } else if (weather.weather && weather.weather[0].icon == "09n") {
+    weatherImg = ShowRain;
+  } else if (weather.weather && weather.weather[0].icon == "10d") {
+    weatherImg = DayRain;
+  } else if (weather.weather && weather.weather[0].icon == "10n") {
+    weatherImg = NiRain;
+  } else if (weather.weather && weather.weather[0].icon == "11d") {
+    weatherImg = ThonderS;
+  } else if (weather.weather && weather.weather[0].icon == "11n") {
+    weatherImg = ThonderS;
+  } else if (weather.weather && weather.weather[0].icon == "13d") {
+    weatherImg = SnowImg;
+  } else if (weather.weather && weather.weather[0].icon == "13n") {
+    weatherImg = SnowImg;
+  } else if (weather.weather && weather.weather[0].icon == "50d") {
+    weatherImg = MistImg;
+  } else if (weather.weather && weather.weather[0].icon == "50n") {
+    weatherImg = MistImg;
   }
 
   return (
     <div className={`main_content_box h-full`}>
       <div className={`input_sec  flex items-center overflow-hidden`}>
-        <input
-          value={weatherData}
-          onChange={(e) => setWeatherData(e.target.value)}
-          type="search"
-          placeholder="Search for cities"
-          className="outline-none py-2 px-3 bg-none w-full bg-transparent"
-        />
-        <button
-          onClick={handleCities}
-          className={`max-w-xs outline-none text-black font-bold bg-yellow-400 h-full py-2 px-3`}
+        <form
+          className="flex w-full"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
         >
-          Search
-        </button>
+          <input
+            value={weatherData}
+            onChange={(e) => setWeatherData(e.target.value)}
+            type="search"
+            placeholder="Search for cities"
+            className="outline-none py-2 px-3 bg-none w-full bg-transparent"
+          />
+          <button
+            onClick={handleCities}
+            className={`max-w-xs outline-none text-black font-bold bg-yellow-400 h-full py-2 px-3`}
+          >
+            Search
+          </button>
+        </form>
       </div>
       <div className={`city_sun_moon px-10`}>
         <div className="row">
@@ -75,12 +134,7 @@ function ContentSec() {
             </div>
           </div>
           <div className={`moon_sun col-6 flex items-center justify-center`}>
-            <img
-              src={`https://openweathermap.org/img/wn/${
-                (weather.weather && weather.weather[0].icon) || `50d`
-              }@2x.png`}
-              alt="weather-icon"
-            />
+            <img src={weatherImg} alt="weather-icon" />
           </div>
         </div>
       </div>

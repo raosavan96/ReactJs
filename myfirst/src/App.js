@@ -23,10 +23,13 @@ import UseState from "./Component/Hooks/UseState/UseState";
 import UseEffect from "./Component/Hooks/UseEffect/UseEffect";
 import UseReducer from "./Component/Hooks/UseReducer/UseReducer";
 import UseContext from "./Component/Hooks/useContext/UseContext";
-import UseContextApi from "./Component/Hooks/useContextApi/UseContextApi"
+import UseContextApi from "./Component/Hooks/useContextApi/UseContextApi";
+import UseCallBack from "./Component/Hooks/Usecallback/UseCallBack";
+import Usememo from "./Component/Hooks/Usememo/Usememo";
 import Sign from "./Component/Projects/Signin/Sign";
 import PassGenPre from "./Component/ChaiWithCode/Projects/PassGenPre";
 import Weather from "./Component/Projects/Weather/Weather";
+import BackColor from "./Component/BackColor/BackColor";
 // import Router from "./Component/Navbar/Navbar";
 // import CurrencyInfo from "./Component/Projects/CurrencyInfo/CurrencyInfo";
 
@@ -47,9 +50,12 @@ function App() {
           <Route path="/usereducer" element={<UseReducer />} />
           <Route path="/usecontext" element={<UseContext />} />
           <Route path="/usecontextapi" element={<UseContextApi />} />
+          <Route path="/usememo" element={<Usememo />} />
           <Route path="/signin" element={<Sign />} />
           <Route path="/passgen" element={<PassGenPre />} />
           <Route path="/weather" element={<Weather />} />
+          <Route path="/usecallback" element={<UseCallBack />} />
+          <Route path="/bgcolor" element={<BackColor />} />
         </Routes>
       </BrowserRouter>
 

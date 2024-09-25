@@ -30,9 +30,13 @@ function UseStateHook() {
     setObj({ ...data, userName: "Sawan " });
   }
 
+  let datas = {
+    backgroundColor: "red"
+  };
+
   return (
     <>
-      <h1>Learn UseState Hook</h1>
+      <h1 style={datas}>Learn UseState Hook</h1>
 
       {/* <h2>UserName :- {value} </h2>
 
