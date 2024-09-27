@@ -33,6 +33,7 @@ import BackColor from "./Component/BackColor/BackColor";
 import Redux from "./Component/Redux/Redux";
 import Counter from "./Component/Counter/Counter";
 import ImageAcn from "./Component/ImageAcn/ImageAcn";
+import InputGet from "./Component/InputValueGet/InputGet";
 // import Router from "./Component/Navbar/Navbar";
 // import CurrencyInfo from "./Component/Projects/CurrencyInfo/CurrencyInfo";
 
@@ -61,6 +62,7 @@ function App() {
           <Route path="/bgcolor" element={<BackColor />} />
           <Route path="/counterapp" element={<Counter />} />
           <Route path="/imageacn" element={<ImageAcn />} />
+          <Route path="/inputget" element={<InputGet />} />
         </Routes>
       </BrowserRouter>
 

@@ -51,6 +51,11 @@ function Appbar() {
                       Image Actions
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/inputget">
+                      Inpur Value Get
+                    </Link>
+                  </li>
                 </ul>
               </li>
 
