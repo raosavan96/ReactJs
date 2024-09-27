@@ -27,16 +27,31 @@ function Appbar() {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/todo">
-                  Todo
-                </Link>
-              </li>
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/bgcolor">
-                  BackgroundColor
-                </Link>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Redux
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/counterapp">
+                      Counter App
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/imageacn">
+                      Image Actions
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               <li className="nav-item dropdown">
@@ -135,6 +150,11 @@ function Appbar() {
                   <li>
                     <Link className="dropdown-item" to="/weather">
                       Weather Info
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/bgcolor">
+                      BackGround Color
                     </Link>
                   </li>
                 </ul>
