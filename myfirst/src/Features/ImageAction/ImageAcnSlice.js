@@ -13,13 +13,13 @@ export const imageSlice = createSlice({
   initialState,
   reducers: {
     imageAcn: (state) => {
-      state.value = sawan;
+      state.value = state.value === sonu ? sawan : sonu;
     },
     imageSize: (state) => {
-      state.width = "350px";
+      state.width = state.width === "200px" ? "350px" : "200px";
     },
     imageMargin: (state) => {
-      state.margin = "150px";
+      state.margin = state.margin === "0px" ? "150px" : "0px";
     }
   }
 });

@@ -12,7 +12,7 @@ function ImageAcn() {
   return (
     <>
       <div className="text-center mt-3">Image Actions</div>
-      <div className="flex justify-center mt-3 gap-2">
+      <div className="flex justify-center mt-3 gap-2 relative z-1">
         <ImageChange />
         <ImageSize />
         <ImageMargin />
@@ -21,7 +21,7 @@ function ImageAcn() {
         style={{ height: "450px" }}
         className="w-full flex justify-center items-center"
       >
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center relative z-0">
           <img
             style={{ width: `${imageSize}`, marginTop: `${imageMargin}` }}
             src={imageValue}
