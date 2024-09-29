@@ -2,13 +2,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function InputOut() {
-  const inputData = useSelector((state) => state.inputfun.value);
+  const valueUsers = useSelector((state) => state.inputvalue.value);
+
   return (
     <>
       <div className="w-full">
-        {inputData.map((value) => (
+        {valueUsers.map((value, index) => (
           <ul>
-            <li>{value.userData}</li>
+            <li>
+              
+              <span>{index+1}</span>
+              {value.userData}
+            </li>
           </ul>
         ))}
       </div>

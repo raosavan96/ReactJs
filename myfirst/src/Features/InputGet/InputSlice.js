@@ -5,14 +5,14 @@ const initialState = {
 };
 
 export const inputSlice = createSlice({
-  name: "input get",
+  name: "input value get",
   initialState,
   reducers: {
-    inputFun: (state, action) => {
+    handleInput: (state, action) => {
       state.value.push(action.payload);
     }
   }
 });
 
-export const { inputFun } = inputSlice.actions;
+export const { handleInput } = inputSlice.actions;
 export default inputSlice.reducer;
