@@ -34,6 +34,8 @@ import Redux from "./Component/Redux/Redux";
 import Counter from "./Component/Counter/Counter";
 import ImageAcn from "./Component/ImageAcn/ImageAcn";
 import InputGet from "./Component/InputValueGet/InputGet";
+import LikeButton from "./Component/LikeButton/LikeButton";
+import CounterRedux from "./Component/Redux/CounterRedux/CounterRedux";
 // import Router from "./Component/Navbar/Navbar";
 // import CurrencyInfo from "./Component/Projects/CurrencyInfo/CurrencyInfo";
 
@@ -63,6 +65,8 @@ function App() {
           <Route path="/counterapp" element={<Counter />} />
           <Route path="/imageacn" element={<ImageAcn />} />
           <Route path="/inputget" element={<InputGet />} />
+          <Route path="/like" element={<LikeButton />} />
+          <Route path="/reduxcntr" element={<CounterRedux/>}/>
         </Routes>
       </BrowserRouter>
 

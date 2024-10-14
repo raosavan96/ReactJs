@@ -56,6 +56,17 @@ function Appbar() {
                       Inpur Value Get
                     </Link>
                   </li>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/like">
+                      Like Button
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/reduxcntr">
+                      Counter Redux
+                    </Link>
+                  </li>
                 </ul>
               </li>
 
