@@ -5,7 +5,7 @@ import { increFun } from "../../../Features/CounterRedux/CounterReduxSlice";
 function BtnCount({ data }) {
   const dispatch = useDispatch();
   const value = useSelector((state) => state.cntrrdx.value[data.id] || 0 );
-  console.log(value);
+//   console.log(value);
 
   function countAct() {
     dispatch(increFun({ id: data.id, count: value }));

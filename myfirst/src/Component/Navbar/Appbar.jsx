@@ -67,6 +67,11 @@ function Appbar() {
                       Counter Redux
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/reduxcntr2">
+                      Counter Redux 2
+                    </Link>
+                  </li>
                 </ul>
               </li>
 

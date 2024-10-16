@@ -4,13 +4,12 @@ const initialState = {
   value: {}
 };
 
-export const counterReduxSlice = createSlice({
-  name: "counter redux",
+export const CounterReduxxSlice = createSlice({
+  name: "Counter Redux 2",
   initialState,
   reducers: {
-    increFun: (state, action) => {
+    incrementFun: (state, action) => {
       const { id, count } = action.payload;
-
       if (state.value[id] !== undefined) {
         state.value[id] = count + 1;
       } else {
@@ -20,5 +19,5 @@ export const counterReduxSlice = createSlice({
   }
 });
 
-export const { increFun } = counterReduxSlice.actions;
-export default counterReduxSlice.reducer;
+export const { incrementFun } = CounterReduxxSlice.actions;
+export default CounterReduxxSlice.reducer;

@@ -3,13 +3,15 @@ import counterReducer from "../Features/Counter/CounterSlice";
 import imageReducer from "../Features/ImageAction/ImageAcnSlice";
 import inputReducer from "../Features/InputGet/InputSlice";
 import likeReducer from "../Features/LikeBtn/LikeSlice";
-import counterRdReducer from "../Features/CounterRedux/CounterReduxSlice"
+import counterRdReducer from "../Features/CounterRedux/CounterReduxSlice";
+import countReducer from "../Features/CounterReduxx/CounterReduxxSlice";
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     imageacn: imageReducer,
     inputvalue: inputReducer,
     likebtn: likeReducer,
-    cntrrdx: counterRdReducer
+    cntrrdx: counterRdReducer,
+    countrdx: countReducer
   }
 });
